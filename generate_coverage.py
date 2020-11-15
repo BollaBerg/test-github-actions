@@ -24,5 +24,5 @@ if __name__ == '__main__':
     try:
         badge.write_badge("Coverage.svg")
     except:
-        print("UPDATED")
+        print(" UPDATED")
         badge.write_badge("Coverage.svg", overwrite=True)

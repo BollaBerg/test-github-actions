@@ -29,13 +29,13 @@ jobs:
       - name: Run tests
         run: python -m unittest
       - name: Generate coverage and check if Coverage.svg has changed
+        id: generate
         run: |
           output=$((python generate_coverage.py) >&1) 
           if [[ "${output##* }" == "UPDATED" ]]; then
-            echo "Coverage_changed=true" >> $GITHUB_ENV
+            echo "::set-output name=Coverage_changed::true"
           else
             echo "OUTPUT: ${output##* }"
-            echo "FULL OUTPUT: $output "
           fi
       - name: Commit Coverage.svg if the file has changed
         run: |
@@ -44,4 +44,4 @@ jobs:
           git add Coverage.svg
           git commit -m "AUTOMATED: Update Coverage.svg"
           git push
-        if: ${{ env.Coverage_changed == true}}
+        if: steps.generate.outputs.Coverage_changed == 'true'
