@@ -7,4 +7,7 @@ class Test(unittest.TestCase):
         self.assertEqual(func1(), True)
 
     def test_func2(self):
-        self.assertEqual(func2(10, 20), 40)
+        self.assertEqual(func2(10, 20), 30)
+
+    def test_func3(self):
+        self.assertEqual(func3(20, 10), 10)
