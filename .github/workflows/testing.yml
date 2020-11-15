@@ -26,3 +26,8 @@ jobs:
           pip install -r requirements.txt
       - name: Run tests
         run: python generate_coverage.py
+      - name: Update Coverage.svg
+        run: |
+          git add Coverage.svg
+          git commit -m "Updage Coverage.svg"
+          git push
