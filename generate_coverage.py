@@ -19,8 +19,8 @@ if __name__ == '__main__':
     unittest.main(module='test', exit=False)
 
     cov.stop()
-    value = cov.report(morfs='to_be_tested.py', precision=2)
+    value = round(cov.report(morfs='to_be_tested.py'), 2)
 
     badge = anybadge.Badge("Coverage", value, thresholds=tresholds)
 
-    badge.write_badge("Coverage.png")
+    badge.write_badge("Coverage.svg", overwrite=True)
