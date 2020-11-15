@@ -15,5 +15,5 @@ class Test(unittest.TestCase):
     def test_func4(self):
         self.assertEqual(func4(20, 10), 200)
 
-    # def test_func5(self):
-    #     self.assertEqual(func5(20, 10), 2)
+    def test_func5(self):
+        self.assertEqual(func5(20, 10), 2)
