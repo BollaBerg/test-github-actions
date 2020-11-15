@@ -33,4 +33,4 @@ jobs:
       - name: Check if Coverage.svg has changed
         run: |
           for file in $CHANGED_FILES; do
-            echo ${file}
+            echo "File: ${file}"
