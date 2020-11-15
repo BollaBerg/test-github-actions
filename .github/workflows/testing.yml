@@ -34,8 +34,6 @@ jobs:
           output=$((python generate_coverage.py) >&1) 
           if [[ "${output##* }" == "UPDATED" ]]; then
             echo "::set-output name=Coverage_changed::true"
-          else
-            echo "OUTPUT: ${output##* }"
           fi
       - name: Commit Coverage.svg if the file has changed
         run: |
