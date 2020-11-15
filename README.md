@@ -1,6 +1,6 @@
 # test-github-actions
 
-![Coverage](./Coverage.svg)
+![Coverage](./tests/img/Coverage.svg)
 
 This repository exists to give me a playground with Github Actions, allowing me to test workflows before implementing them.
 

@@ -1,6 +1,6 @@
 import unittest
 
-from to_be_tested import func1, func2, func3, func4
+from src.to_be_tested import func1, func2, func3, func4
 
 class Test(unittest.TestCase):
     def test_func1(self):

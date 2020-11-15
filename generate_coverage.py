@@ -2,6 +2,7 @@ import anybadge
 import coverage
 import unittest
 
+
 tresholds = {
     40: 'red',
     60: 'orange',
@@ -14,11 +15,14 @@ if __name__ == '__main__':
     cov = coverage.Coverage()
     cov.start()
 
-    unittest.main(module='test', exit=False)
+    
+    from tests import test       # Needs to be after cov.start to count lines with function definition
+    suite = unittest.TestLoader().loadTestsFromModule(test)
+    unittest.TextTestRunner(verbosity=2).run(suite)
 
     cov.stop()
-    value = round(cov.report(morfs='to_be_tested.py'), 2)
+    value = round(cov.report(morfs='src/to_be_tested.py'), 2)
 
     badge = anybadge.Badge("Coverage", value, thresholds=tresholds, value_suffix='%')
 
-    badge.write_badge("Coverage.svg", overwrite=True)
+    badge.write_badge("tests/img/Coverage.svg", overwrite=True)
