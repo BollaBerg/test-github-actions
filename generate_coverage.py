@@ -25,4 +25,4 @@ if __name__ == '__main__':
 
     badge = anybadge.Badge("Coverage", value, thresholds=tresholds, value_suffix='%')
 
-    badge.write_badge("tests/img/Coverage.svg", overwrite=True)
+    badge.write_badge("docs/img/Coverage.svg", overwrite=True)

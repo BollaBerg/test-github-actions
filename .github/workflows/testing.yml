@@ -33,7 +33,7 @@ jobs:
       - name: Commit Coverage.svg if the file has changed
         uses: EndBug/add-and-commit@v5
         with:
-          add: 'tests/img/Coverage.svg'
+          add: 'docs/img/Coverage.svg'
           message: 'AUTOMATED COMMIT: Update Coverage.svg'
           push: true
         env:
