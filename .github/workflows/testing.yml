@@ -28,8 +28,7 @@ jobs:
           pip install -r requirements.txt
       - name: Run tests
         run: python -m unittest
-      - name: Generate coverage 
-        id: generate
+      - name: Generate coverage
         run: python generate_coverage.py
       - name: Commit Coverage.svg if the file has changed
         uses: EndBug/add-and-commit@v5
