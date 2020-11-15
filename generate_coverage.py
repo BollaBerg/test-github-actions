@@ -2,8 +2,6 @@ import anybadge
 import coverage
 import unittest
 
-import test
-
 tresholds = {
     40: 'red',
     60: 'orange',
@@ -23,4 +21,8 @@ if __name__ == '__main__':
 
     badge = anybadge.Badge("Coverage", value, thresholds=tresholds, value_suffix='%')
 
-    badge.write_badge("Coverage.svg", overwrite=True)
+    try:
+        badge.write_badge("Coverage.svg")
+    except:
+        print("COVERAGE UPDATED")
+        badge.write_badge("Coverage.svg", overwrite=True)
